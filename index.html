@@ -36,6 +36,17 @@
       camera.position.z = 5;
 
       function animate() {
+        requestAnimationFrame(animate);
+
+        cube.rotation.x += 0.001;
+        cube.rotation.y += 0.001;
+        cube.rotation.z += 0.001;
+
+        renderer.render(scene, camera);
+      }
+      animate()
+
+      function animateOnScroll() {
         cube.rotation.x += 0.01;
         cube.rotation.y += 0.01;
         cube.rotation.z += 0.01;
@@ -44,10 +55,9 @@
       }
 
       document.body.onscroll = () => {
-        animate();
+        animateOnScroll();
         console.log(document.body.offsetTop);
       };
-      
     </script>
   </body>
 </html>
