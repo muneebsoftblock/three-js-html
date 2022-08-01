@@ -13,9 +13,6 @@
     <div>aoa</div>
     <div>aoa</div>
 
-    <span>aoa</span>
-    <span>aoa</span>
-
     <script type="module">
       import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.118/build/three.module.js';
 
@@ -35,27 +32,11 @@
 
       function animate() {
         requestAnimationFrame(animate);
-
         cube.rotation.x += 0.003;
         cube.rotation.y += 0.003;
-        cube.rotation.z += 0.003;
-
         renderer.render(scene, camera);
       }
-      animate()
-
-      // function animateOnScroll() {
-      //   cube.rotation.x += 0.01;
-      //   cube.rotation.y += 0.01;
-      //   cube.rotation.z += 0.01;
-
-      //   renderer.render(scene, camera);
-      // }
-
-      // document.body.onscroll = () => {
-      //   animateOnScroll();
-      //   console.log(document.body.offsetTop);
-      // };
+      animate();
     </script>
   </body>
 </html>
