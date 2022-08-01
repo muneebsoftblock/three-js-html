@@ -25,19 +25,26 @@
       renderer.setSize(window.innerWidth, window.innerHeight);
       document.body.appendChild(renderer.domElement);
 
-      //create a blue LineBasicMaterial
-      const material = new THREE.LineBasicMaterial({ color: 0xffffff });
-
       const points = [];
       points.push(new THREE.Vector3(-10, 0, 0));
       points.push(new THREE.Vector3(0, 10, 0));
       points.push(new THREE.Vector3(10, 0, 0));
 
-      const geometry = new THREE.BufferGeometry().setFromPoints(points);
+      const geometry = new THREE.TextGeometry('text', {
+        font: 'arial',
+        fontName: 'arial',
+        fontWeight: 'bold',
+        height: 20,
+        size: 70,
+        hover: 30,
+        curveSegments: 4,
+        bevelThickness: 2,
+        bevelSize: 1.5,
+      });
 
-      const line = new THREE.Line(geometry, material);
-
-      scene.add(line);
+      const material = new THREE.MeshBasicMaterial({ color: 'pink' });
+      const cube = new THREE.Mesh(geometry, material);
+      scene.add(cube);
 
       renderer.render(scene, camera);
     </script>
